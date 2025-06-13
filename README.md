@@ -8,17 +8,39 @@ This repository contains a minimal example showing how to use [LangChain](https:
 - `langchain` and `ollama` Python packages
 - An Ollama server with a model installed (for example `llama2`)
 
-## Running the example
+## Setup
 
-1. Install the dependencies:
+1. Create and activate a virtual environment:
 
 ```bash
-pip install langchain ollama
+python3 -m venv venv
+source venv/bin/activate
 ```
 
-2. Ensure the Ollama server is running and the model specified in `langchain_ollama_example.py` is available.
+2. Install the dependencies:
 
-3. Execute the script:
+```bash
+pip install -r requirements.txt
+```
+
+3. Install the model on your Ollama server (replace `llama2` if you want a
+   different model):
+
+```bash
+ollama pull llama2
+```
+
+4. Start the Ollama server so the script can access the model:
+
+```bash
+ollama serve
+```
+
+## Running the example
+
+1. Ensure the Ollama server is running and the model specified in `langchain_ollama_example.py` is available (see the Setup section above).
+
+2. Execute the script:
 
 ```bash
 python langchain_ollama_example.py
